@@ -96,7 +96,7 @@ app.delete('/deletetask/:id', (req, res) => {
         let id = req.params.id;
         let { completion } = req.body
         console.log(`Updating task ${id}, ${completion}`);
-        let queryText = `UPDATE "todolist" SET completion='COMPLETED' WHERE id=$1;`;
+        let queryText = `UPDATE "todolist" SET completion='Complete' WHERE id=$1;`;
         pool.query(queryText, [id]).then(function (result) {
             res.send('Succesfully updated todolist');
         }).catch(function (result) {

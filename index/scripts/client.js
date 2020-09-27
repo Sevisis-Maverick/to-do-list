@@ -12,7 +12,6 @@ function linkButtons() {
     $('body').on('click', '#submitTask', submitTask);
     $('body').on('click', '#completeButton', completeTask);
     $('body').on('click', '#deleteButton', deleteTask);
-
 };
 
 
@@ -27,12 +26,12 @@ function getTasks() {
         $('#taskTableBody').empty();
         for (let task of result) {
             console.log(task);
-        $('#taskTableBody').append(`
+            $('#taskTableBody').append(`
         <tr>
             <td>${task.task}</td>
             <td>${task.description}</td>
             <td>${task.completion}</td>
-            <td><button id='completeButton'>Complete</button><button id='deleteButton'>Delete</button></td>
+            <td><button id='completeButton' data-taskid='${task.id}'>Complete</button><button id='deleteButton' data-taskid='${task.id}'>Delete</button></td>
         </tr>
         `)
         }
@@ -63,14 +62,34 @@ function submitTask() {
 
 
 
-//Change status to "completed" once the button is pressed, and send information to server/database
-function completeTask() {
-    console.log(`Completing task with ID of: ${task.id}`);
-}
+//Update the DOM when the task has been completed, and update the database
+function completeTask(event) {
+    console.log('Completing task...');
+    console.log($(event.target).data());
+    const taskID = $(event.target).data('taskid');
+    console.log(taskID);
+    $.ajax({
+        method: 'PUT',
+        url: `/updatetask/${$(event.target).data('taskid')}`
+    }).then((response) => {
+        getTasks();
+    });
+};
 
 
 
-//Delete task from the table once the button has been pressed, and send information to the server/database
-function deleteTask() {
-    console.log(`Deleting task with ID: ${task.id}`);
-}
+//Delete a task, and update the database
+function deleteTask(event) {
+    console.log(`Deleting task with ID...`);
+    console.log($(event.target).data());
+    const taskID = $(event.target).data('taskid');
+    console.log(taskID);
+    $.ajax({
+        method: 'DELETE',
+        url: `/deletetask/${taskID}`,
+    }).then((response) => {
+        getTasks();
+    });
+};
+
+
