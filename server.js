@@ -23,7 +23,7 @@ app.use('/tasks', taskRouter);
 //Create the pool of connections that makes SQL commands!
 const Pool = pg.Pool;
 const pool = new Pool({
-    database: 'process.env.todo_database || todo_database', //Name of target database
+    database: 'process.env.todolist_database || todolist_database', //Name of target database
     host: 'localhost', //Location of target database
     port: 5432, //Default localhost for postgres
     max: 10, //How many connections (queries) that can be handled at once
