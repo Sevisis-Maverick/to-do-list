@@ -5,7 +5,7 @@ const pg = require('pg');
 //Activate express upon startup!
 const app = express();
 //Target a port on the internet!
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 //Add a body parser, which allows to do important stuff!
 const bodyParser = require('body-parser');
 // Use bodyParser.urlencoded throughout the app with this:
