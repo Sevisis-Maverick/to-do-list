@@ -24,16 +24,23 @@ function getTasks() {
     }).then(function (result) {
         console.log(result);
         $('#taskTableBody').empty();
+        
         for (let task of result) {
             console.log(task);
+
+            let taskClass = "incomplete";
+            if(task.completion === "Complete") {taskClass = "complete"};
+            
             $('#taskTableBody').append(`
-        <tr>
+        <tr class="${taskClass}">
             <td>${task.task}</td>
             <td>${task.description}</td>
             <td>${task.completion}</td>
             <td><button id='completeButton' data-taskid='${task.id}'>Complete</button><button id='deleteButton' data-taskid='${task.id}'>Delete</button></td>
         </tr>
         `)
+        
+        $('.complete').css("background-color", "black");
         }
     });
 };
