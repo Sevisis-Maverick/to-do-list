@@ -1,9 +1,4 @@
-# Project Name
+# To Do List
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+A simply form that allows you to enter in a task name, and task description. Upon submission, the DOM updates with the list of tasks you have added, with a "complete" and "delete" option. Mark a task as complete, or delete it from the database. 
 
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template).

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevisis SQL To-do List</title>
+
+    <script src="vendors/jquery v3.5.1.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel='stylesheet' href='styles/style.css'>
+</head>
+
+<body>
+
+    <h1>Sevisis SQL To-do List</h1>
+
+    <section id='addTask'>
+        <input id='taskName' type='text' placeholder='Task name'>
+        <input id='taskDescription' type='text' placeholder='Task description'>
+        <button id='submitTask'>Submit</button>
+    </section>
+
+    <section>
+        <h3>List of tasks</h3>
+
+        <table id='taskTable'>
+            <thead>
+                <tr id='taskTableHead'>
+                    <th>Task name</th>
+                    <th>Task description</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id='taskTableBody'>
+                
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

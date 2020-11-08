@@ -1,7 +1,7 @@
 
 ## Weekend Challenge: SQL To-Do List
 
-Hello Primers! 
+Hello Sprouts! 
 
 Welcome to your weekend challenge!
 
@@ -54,8 +54,12 @@ For each of your strech goals, you will be practicing git branching. Please refe
 - `feature-confirm-delete`
 
     - [ ]  In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
-        - Some styled options are [Bootstrap Modal](https://getbootstrap.com/docs/4.0/components/modal/) or [Sweet Alerts](https://sweetalert.js.org/guides/).
+        - Some styled options are [Bootstrap Modal](https://getbootstrap.com/docs/4.0/components/modal/) or [Sweet Alerts](https://sweetalert.js.org/guides/): Use the CDN option.
 
 - `feature-ordering-task-query` 
 
     - [ ]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
+    
+- `feature-time-completed` 
+
+    - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
